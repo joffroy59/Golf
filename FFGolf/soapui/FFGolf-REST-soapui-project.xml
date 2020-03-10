@@ -129,9 +129,157 @@
             </con:method>
         </con:resource>
 
-    </con:interface>
+    <con:resource name="resultat-calcul-slop" path="/fcapi/golfs/resultat-calcul-slop" id="ce040651-601d-42ed-931c-e65fdc3cadb1">
+            <con:settings/>
+            <con:parameters>
+                
+            <con:parameter><con:name>X-Requested-With</con:name><con:value>XMLHttpRequest</con:value><con:style>HEADER</con:style><con:default>XMLHttpRequest</con:default></con:parameter><con:parameter required="true"><con:name>codeGolf</con:name><con:value/><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:decimal</con:type><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter required="true"><con:name>codeTerrain</con:name><con:value/><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default/></con:parameter><con:parameter required="true"><con:name>index</con:name><con:value/><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:double</con:type><con:default/></con:parameter><con:parameter required="true"><con:name>sexe</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:option>M</con:option><con:option>F</con:option></con:parameter><con:parameter required="true"><con:name>nbTrous</con:name><con:value/><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:decimal</con:type><con:default/><con:option>18</con:option><con:option>9</con:option></con:parameter></con:parameters>
+            <con:method name="resultat-calcul-slop" id="fd9226c2-9645-42b8-8231-4cb8c941b529" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element>html</con:element>
+                </con:representation>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/xml</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="5e6f1515-03c4-4c86-90f4-9b0cdc3ad0aa" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://guidegolfs.ffgolf.org</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>https://guidegolfs.ffgolf.org/map/en/golfs</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+  <con:entry key="codeGolf" value="1482"/>
+  <con:entry key="codeTerrain" value="02"/>
+  <con:entry key="X-Requested-With" value="XMLHttpRequest"/>
+  <con:entry key="nbTrous" value="18"/>
+  <con:entry key="index" value="54"/>
+  <con:entry key="sexe" value="H"/>
+</con:parameters>
+                    <con:parameterOrder><con:entry>X-Requested-With</con:entry><con:entry>codeGolf</con:entry><con:entry>codeTerrain</con:entry><con:entry>index</con:entry><con:entry>sexe</con:entry><con:entry>nbTrous</con:entry></con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource></con:interface>
     
-    <con:properties/>
+    <con:testSuite id="e1160467-635e-40b7-a3f0-1ced0a80c083" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d70896af-4588-4560-8eb1-8a8967898508" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="resultat-calcul-slop - Request 1" id="cffd6449-d425-4f0a-8765-8e71b6cce08d"><con:settings/><con:config service="https://guidegolfs.ffgolf.org" resourcePath="/fcapi/golfs/resultat-calcul-slop" methodName="resultat-calcul-slop" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="resultat-calcul-slop - Request 1" id="5e6f1515-03c4-4c86-90f4-9b0cdc3ad0aa" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://guidegolfs.ffgolf.org</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>https://guidegolfs.ffgolf.org/map/en/golfs</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+  <con:entry key="codeGolf" value="1482"/>
+  <con:entry key="codeTerrain" value="02"/>
+  <con:entry key="X-Requested-With" value="XMLHttpRequest"/>
+  <con:entry key="nbTrous" value="18"/>
+  <con:entry key="index" value="54"/>
+  <con:entry key="sexe" value="H"/>
+</con:parameters>
+                    <con:parameterOrder><con:entry>X-Requested-With</con:entry><con:entry>codeGolf</con:entry><con:entry>codeTerrain</con:entry><con:entry>index</con:entry><con:entry>sexe</con:entry><con:entry>nbTrous</con:entry></con:parameterOrder>
+                </con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="ce2b2d65-ed15-4e39-aece-49f32d63a803"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import static Constants.*
+
+class Constants {
+	static final COLOR_MAP=[	
+			"#000000":"Noir",
+			"#FFFFFF":"Blanc",
+			"#FFF152":"Jaune",
+			"#008BC2":"Bleu",
+			"#C23633":"Rouge",
+			"#6E6796":"Violet"]
+}
+
+def getDetail(node,idx){
+	return node.td[idx].text().trim()
+}
+def getColor(node){
+	return node.td[0].div.find { it.@id == 'circleSlope' }.@style.replaceAll('background:','').replaceAll(';','').trim()
+}
+def getSlope(node){
+	return getDetail(node,1)
+}
+def getSss(node){
+	return getDetail(node,2)
+}
+def getPar(node){
+	return getDetail(node,3)
+}
+def getHcp(node){
+	return getDetail(node,4)
+}
+def getTerrain(node){
+	node['terEtlSta']=(node.terEtlSta=="01")
+	return node
+}
+
+def getSexe(request){
+	return request.params.sexe.value
+}
+def getIndex(request){
+	return request.params.index.value
+}
+
+def getHtmlTerrainDefiniton(htmlFragment){
+	//parse html
+	parser=new XmlParser()
+	parser.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false) 
+	parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+	return parser.parseText("&lt;root>"+htmlFragment.replaceAll("&lt;br>","&lt;br/>")+"&lt;/root>")
+}
+
+def getRepereMap(htmlFragmentNode){
+	startCircleMap=[:]
+	def htmlFragment = getHtmlTerrainDefiniton(htmlFragmentNode)
+	def htmlResult=htmlFragment.div.find{ it.@id == "result" }
+	assert htmlResult != null
+	htmlResult.div.findAll{ it.@class == "rep" }.each{ startCircle ->
+		currentColorNode=startCircle.table.tbody.tr
+		color=getColor(currentColorNode)
+		slope=getSlope(currentColorNode)
+		sss=getSss(currentColorNode)
+		par=getPar(currentColorNode)
+		hcp=getHcp(currentColorNode)
+		startCircleMap[COLOR_MAP[color]]=[slope:slope,sss:sss,par:par,hcp:hcp]
+	}
+	return startCircleMap
+}
+
+// Get the test step for which you want the response
+def testStep = testRunner.testCase.testSuite.testCases[ "TestCase 1" ].testSteps[ "resultat-calcul-slop - Request 1" ]
+// Get the response
+def testStepRequest=testStep.testRequest
+def json = new JsonSlurper().parseText(testStepRequest.response.responseContent)
+
+terrainDificulty=[
+	golf:getTerrain(json.data),
+	sexe:getSexe(testStepRequest),
+	index:getIndex(testStepRequest)
+	]
+
+
+
+terrainDificulty+=[reperes:getRepereMap(json.html)]
+
+log.info terrainDificulty
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/>
     <con:wssContainer/>
     <con:oAuth2ProfileContainer/>
     <con:oAuth1ProfileContainer/>
