@@ -172,7 +172,7 @@
             </con:method>
         </con:resource></con:interface>
     
-    <con:testSuite id="e1160467-635e-40b7-a3f0-1ced0a80c083" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d70896af-4588-4560-8eb1-8a8967898508" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="resultat-calcul-slop - Request 1" id="cffd6449-d425-4f0a-8765-8e71b6cce08d"><con:settings/><con:config service="https://guidegolfs.ffgolf.org" resourcePath="/fcapi/golfs/resultat-calcul-slop" methodName="resultat-calcul-slop" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="resultat-calcul-slop - Request 1" id="5e6f1515-03c4-4c86-90f4-9b0cdc3ad0aa" mediaType="application/json" postQueryString="false">
+    <con:testSuite id="e1160467-635e-40b7-a3f0-1ced0a80c083" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d70896af-4588-4560-8eb1-8a8967898508" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="resultat-calcul-slop - 1482 - 18 - 54 - H - 18" id="cffd6449-d425-4f0a-8765-8e71b6cce08d"><con:settings/><con:config service="https://guidegolfs.ffgolf.org" resourcePath="/fcapi/golfs/resultat-calcul-slop" methodName="resultat-calcul-slop" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="resultat-calcul-slop - Request 1" id="5e6f1515-03c4-4c86-90f4-9b0cdc3ad0aa" mediaType="application/json" postQueryString="false">
                     <con:settings>
                         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                     </con:settings>
@@ -204,6 +204,8 @@ class Constants {
 			"#008BC2":"Bleu",
 			"#C23633":"Rouge",
 			"#6E6796":"Violet"]
+	static final TEST_CASE="TestCase 1"
+	static final TEST_STEP_NAME="resultat-calcul-slop - 1482 - 18 - 54 - H - 18"
 }
 
 def getDetail(node,idx){
@@ -262,7 +264,7 @@ def getRepereMap(htmlFragmentNode){
 }
 
 // Get the test step for which you want the response
-def testStep = testRunner.testCase.testSuite.testCases[ "TestCase 1" ].testSteps[ "resultat-calcul-slop - Request 1" ]
+def testStep = testRunner.testCase.testSuite.testCases[ TEST_CASE ].testSteps[ TEST_STEP_NAME ]
 // Get the response
 def testStepRequest=testStep.testRequest
 def json = new JsonSlurper().parseText(testStepRequest.response.responseContent)
@@ -278,7 +280,7 @@ terrainDificulty=[
 terrainDificulty+=[reperes:getRepereMap(json.html)]
 
 log.info terrainDificulty
-
+assert terrainDificulty.toMapString()=="[golf:[glfLib:GOLF DE LILLE METROPOLE, terEtlSta:true, terNbTrou:18, terPar:72], sexe:H, index:54, reperes:[Noir:[slope:137, sss:72.8, par:72, hcp:62], Blanc:[slope:134, sss:72.2, par:72, hcp:61], Jaune:[slope:125, sss:69.5, par:72, hcp:55], Bleu:[slope:120, sss:67.1, par:72, hcp:51], Rouge:[slope:116, sss:64.7, par:72, hcp:48], Violet:[slope:113, sss:62.8, par:72, hcp:45]]]"
 </script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/>
     <con:wssContainer/>
     <con:oAuth2ProfileContainer/>
